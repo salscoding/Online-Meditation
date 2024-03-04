@@ -1,24 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
   var opacity = 0;
   var interval = setInterval(function () {
-    opacity += 0.05; // 0.05 per increase
+    opacity += 0.05; 
     document.body.style.opacity = opacity;
     document.body.style.backgroundColor = "rgba(0, 0 , 128, " + opacity + ")";
     if (opacity >= 1) {
-      clearInterval(interval); // Clear Timer
+      clearInterval(interval); 
     }
-  }, 60); // Executed every 60 milliseconds
+  }, 60); 
 });
 
 function fadeAndRedirect() {
   var opacity = 1;
   var interval = setInterval(function () {
-    opacity -= 0.05; // 0.05 per decrease
+    opacity -= 0.05; 
     document.body.style.opacity = opacity;
     document.body.style.backgroundColor = "rgba(0, 0 , 128, " + opacity + ")";
     if (opacity <= 0) {
-      clearInterval(interval); // Clear Timer
-      window.location.href = "../login/login.html";
+      clearInterval(interval); 
+      window.location.href = "./login.html";
     }
-  }, 60); // Executed every 60 milliseconds
+  }, 60); 
 }

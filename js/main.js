@@ -6,9 +6,9 @@ function loginOut() {
     document.body.style.backgroundColor = "rgba(300, 0 , 0, " + opacity + ")";
     if (opacity <= 0) {
       clearInterval(interval); 
-      window.location.href = "../login/login.html";
+      window.location.href = "./login.html";
     }
-  }, 60); 
+  }, 60);
 
 }
 function startMeditating() {
@@ -19,7 +19,7 @@ function startMeditating() {
     document.body.style.backgroundColor = "rgba(300, 0 , 0, " + opacity + ")";
     if (opacity <= 0) {
       clearInterval(interval); 
-      window.location.href = `../meditation/index.html?params=` + "main";
+      window.location.href = `./meditation.html?params=` + "main";
     }
   }, 60); 
 
@@ -43,7 +43,7 @@ function fadeAndRedirect() {
     document.body.style.backgroundColor = "rgba(300, 0 , 0, " + opacity + ")";
     if (opacity <= 0) {
       clearInterval(interval); 
-      window.location.href = "../login/login.html";
+      window.location.href = "./login.html";
     }
   }, 60); 
 }
@@ -51,10 +51,10 @@ function changeImage() {
   var audio = document.getElementById("myAudio");
   var image = document.getElementById("myImage");
   if (image.src.match("../image/closeAudio.png")) {
-    image.src = "../image/openAudio.png";
+    image.src = "./assets/image/openAudio.png";
     audio.play();
   } else {
-    image.src = "../image/closeAudio.png";
+    image.src = "./assets/image/closeAudio.png";
     audio.pause();
   }
 }

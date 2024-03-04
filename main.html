@@ -7,7 +7,7 @@
     <title>Online Meditation Environment</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Notable|Permanent+Marker|Roboto|Saira+Stencil+One&display=swap"
         rel="stylesheet">
 </head>
@@ -17,20 +17,20 @@
         <div class="hero-video">
             <div class="hero-wo">
                 <video autoplay="autoplay" loop="loop" muted defaultMuted playsinline id="myVideo" controls>
-                    <source src="../video/test3.mp4" type="video/mp4">
+                    <source src="./assets/video/test3.mp4" type="video/mp4">
                     </video>
             </div>
         </div>
         <br>
         <div class="audio-btn">
-            <img id="myImage" src="../image/closeAudio.png" alt="Image 1" onclick="changeImage()">
+            <img id="myImage" src="./assets/image/closeAudio.png" alt="Image 1" onclick="changeImage()">
         </div>
         <div class="startbtn">
             <button class="btn mt-5 custom-button" style="width: 200px;" onclick="startMeditating()">Start
                 your meditation</button>
         </div>
         <audio id="myAudio" loop>
-            <source src="../video/y1295.mp3" />
+            <source src="./assets/video/y1295.mp3" />
         </audio>
 
         <div class="order-box">
@@ -47,6 +47,7 @@
                     out</button>
             </div>
         </div>
+        
 
         <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -83,5 +84,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
-<script src="script.js"></script>
+<script src="./js/main.js"></script>
 </html>

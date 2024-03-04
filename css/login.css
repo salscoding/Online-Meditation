@@ -32,25 +32,21 @@ a {
     color: #333;
     font-size: 1rem;
     text-decoration: none;
-    /* underline disappears */
 }
 
 
 .container {
     position: relative;
     border-radius: 10px;
+  
     /* Adding rounded corners to an element px is in pixels*/
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    /*  */
     padding: 0.6rem;
     width: 56rem;
     height: 35rem;
     overflow: hidden;
-    /* Hide Beyond Content */
     max-width: 100vw;
-    /* Relative viewport width in vw */
     min-height: 70vh;
-    /* Relative viewport height in vh */
     z-index: 2;
     margin-top: 80px;
 }
@@ -68,17 +64,15 @@ a {
 }
 
 .form-container form {
-    /* You can format a class containing a form-container.
+    /* Can format a class containing a form-container.
         In this case it is "form-container sign-up-container"
             "form-container sign-in-container". */
     background-color: rgba(55, 59, 89, 0.5);
     display: flex;
     flex-direction: column;
-    /* Sub-elements are arranged vertically, from top to bottom */
     padding: 0 1.8rem;
     height: 100%;
     justify-content: center;
-    /* Adjust the spindle alignment to centre the element horizontally */
     align-items: center;
 }
 
@@ -116,7 +110,6 @@ a {
     border-left: none;
     border-right: none;
     border-top: none;
-    /* Remove the left and right borders from the input */
     outline: none;
     /* Cancels the appearance of the outline when the mouse hovers over the input box */
     margin: 0.6rem 0;
@@ -127,7 +120,7 @@ a {
     transform: scale(0.95, 0.95);
 }
 
-/* Setting the button style */
+/* Setting the key style */
 .form-container button {
     padding: 0.4rem 1rem;
     background-color: rgba(119, 103, 121, 0.5);
@@ -146,6 +139,7 @@ button#send_code {
     width: 100%;
 }
 
+/* Setting up the side-bezel button effect */
 button.ghost {
     background: transparent;
     border-color: #fff;
@@ -178,6 +172,7 @@ button.ghost:active {
     transition: all 0.5s ease-in;
 }
 
+/* Login box details */
 .sing-in-container {
     left: 0;
     width: 50%;
@@ -187,6 +182,7 @@ button.ghost:active {
     The larger the value, the more the elements will be placed in front of each other */
 }
 
+/* Registration Box Details */
 .sign-up-container {
     left: 0;
     width: 50%;
@@ -251,9 +247,7 @@ button.ghost:active {
 
 .container.right-panel-active .sign-up-container {
     transform: translateX(100%);
-    /* right shift */
     opacity: 1;
-    /* Displayed */
     z-index: 5;
     transition: all 0.6s ease-in-out;
 }

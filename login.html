@@ -8,7 +8,7 @@
     <title>Online Meditation Environment</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="../Home/style.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/login.css">
     <link href="https://fonts.googleapis.com/css?family=Notable|Permanent+Marker|Roboto|Saira+Stencil+One&display=swap"
         rel="stylesheet">
@@ -22,7 +22,7 @@
         <div class="hero-video">
             <div class="hero-wo">
                 <video autoplay="autoplay" loop="loop" muted defaultMuted playsinline id="myVideo" controls>
-                    <source src="../video/video1.mp4" type="video/mp4">
+                    <source src="./assets/video/video1.mp4" type="video/mp4">
                     </video>
             </div>
             <div style="position: relative;z-index: 999 !important;">
@@ -69,7 +69,7 @@
             </div>
             <!-- Login -->
             <div class="form-container sing-in-container" id="isShowLogin">
-                <form action="../main/index.html" onsubmit="return login();">
+                <form action="./main.html" onsubmit="return login();">
                     <h1 class="color-op">Login</h1>
                     <input type="text" placeholder="username" id="userLogin" required>
                     <input type="password" placeholder="password" id="pwdLogin" required>

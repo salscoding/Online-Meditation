@@ -46,10 +46,15 @@ html {
   color: black;
 }
 
-
+/* .hero-video {
+  position: relative;
+  overflow: hidden;
+  height: 100vh; 
+} */
 
 .hero-wo {
   pointer-events: none;
+  /* 阻止视频元素接收鼠标事件 */
 }
 
 .hero-video video {
@@ -188,11 +193,17 @@ html {
 
 .custom-button {
   background-color: transparent;
+  /* 透明背景 */
   border: 2px solid white;
+  /* 白色边框 */
   color: white;
+  /* 白色字体 */
   padding: 10px 20px;
+  /* 按钮内边距 */
   font-size: 16px;
+  /* 字体大小 */
   cursor: pointer;
+  /* 鼠标悬停样式 */
 }
 
 .custom-button:hover {

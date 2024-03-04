@@ -51,11 +51,15 @@ html {
   color: black;
 }
 
+/* .hero-video {
+  position: relative;
+  overflow: hidden;
+  height: 100vh; 
+} */
 
 .hero-wo {
 
   pointer-events: none;
-  /* Block video elements from receiving mouse events */
 }
 
 

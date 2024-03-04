@@ -50,7 +50,7 @@ function register() {
     hotUser.push(obj);
     localStorage.setItem("hotUser", JSON.stringify(hotUser));
   }
-  let content = `Register successfully, and username:${username}, password:${pwds}`;
+  let content = `Register successfully, username:${username}, password:${pwds}`;
   modelMsg(content);
   return true;
 }
@@ -63,20 +63,20 @@ function login() {
     (item) => item.name == userLogin && item.pwd == pwdLogin
   );
   if (indexFind !== -1) {
-    let content = "Login successfully!";
+    let content = "Login successfully";
     modelMsg(content);
     // Start page switching gradient effect
     var opacity = 1;
     var interval = setInterval(function () {
-      opacity -= 0.05; // Reduce by 0.05 each time
+      opacity -= 0.05;
       document.body.style.opacity = opacity;
       document.body.style.backgroundColor = "rgba(0, 191, 255, " + opacity + ")";
       if (opacity <= 0) {
-        clearInterval(interval); // Clear timer
+        clearInterval(interval);
         // Manually triggered form submission
         document.querySelector("#isShowLogin form").submit();
       }
-    }, 60); // Executed every 60 milliseconds
+    }, 60); 
     return false; // Blocking default form submission behaviour
   } else {
     let content = "The username or password is incorrect. Please re-enter them.";
@@ -85,7 +85,7 @@ function login() {
   }
 }
 
-// Setting the content of the popup box
+// Setting the content of the pop-up box
 function modelMsg(content) {
   $("#alertMsg").modal("show");
   let text = document.getElementById("alertMsgVal");
@@ -95,24 +95,24 @@ function modelMsg(content) {
 document.addEventListener("DOMContentLoaded", function () {
   var opacity = 0;
   var interval = setInterval(function () {
-    opacity += 0.05; // 0.05 per increase
+    opacity += 0.05;
     document.body.style.opacity = opacity;
     document.body.style.backgroundColor = "rgba(0, 191, 255, " + opacity + ")";
     if (opacity >= 1) {
-      clearInterval(interval); // Clear timer
+      clearInterval(interval); 
     }
-  }, 60); // Executed every 60 milliseconds
+  }, 60); 
 });
 
 function returnHome() {
   var opacity = 1;
   var interval = setInterval(function () {
-    opacity -= 0.05; // 0.05 per decrease
+    opacity -= 0.05; 
     document.body.style.opacity = opacity;
     document.body.style.backgroundColor = "rgba(0, 191, 255, " + opacity + ")";
     if (opacity <= 0) {
-      clearInterval(interval); // Clear timer
-      window.location.href = "../Home/index.html";
+      clearInterval(interval); 
+      window.location.href = "./index.html";
     }
-  }, 60); // Executed every 60 milliseconds
+  }, 60); 
 }
