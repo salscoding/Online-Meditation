@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\V1\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\V1\LogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,8 @@ Route::group(
     ],
     function () {
         Route::post('logout', [AuthController::class, 'logout']);
+
+        Route::apiResource('logs', LogController::class);
 
         Route::get('/test', function () {
             return response()->json([
