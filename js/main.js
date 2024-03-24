@@ -1,4 +1,6 @@
 function loginOut() {
+  localStorage.removeItem('rememberMe');
+
   var opacity = 1;
   var interval = setInterval(function () {
     opacity -= 0.05; 
@@ -47,14 +49,15 @@ function fadeAndRedirect() {
     }
   }, 60); 
 }
-function changeImage() {
-  var audio = document.getElementById("myAudio");
+  const audio = document.querySelector("#myAudio");
+  const Mute = document.getElementById("Mute");
   var image = document.getElementById("myImage");
-  if (image.src.match("../image/closeAudio.png")) {
-    image.src = "./assets/image/openAudio.png";
-    audio.play();
-  } else {
-    image.src = "./assets/image/closeAudio.png";
-    audio.pause();
-  }
-}
+  Mute.addEventListener("click", function () {
+    if (image.src.match("./assets/image/closeAudio.png")) {
+      image.src = "./assets/image/openAudio.png";
+      audio.play();
+    } else {
+      image.src = "./assets/image/closeAudio.png";
+      audio.pause();
+    }
+  });

@@ -18,7 +18,12 @@ function fadeAndRedirect() {
     document.body.style.backgroundColor = "rgba(0, 0 , 128, " + opacity + ")";
     if (opacity <= 0) {
       clearInterval(interval); 
-      window.location.href = "./login.html";
+      var rememberMe = localStorage.getItem("rememberMe");
+      if (rememberMe === "true") {
+        window.location.href = "./main.html"; 
+      } else {
+        window.location.href = "./login.html";
+      }
     }
   }, 60); 
 }

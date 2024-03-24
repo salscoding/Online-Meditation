@@ -58,6 +58,8 @@ function register() {
 function login() {
   var userLogin = document.getElementById("userLogin").value;
   var pwdLogin = document.getElementById("pwdLogin").value;
+  let rememberMe = document.getElementById("rememberMe").checked;
+  console.log(rememberMe)
   let hotUser = JSON.parse(localStorage.getItem("hotUser"));
   const indexFind = hotUser.findIndex(
     (item) => item.name == userLogin && item.pwd == pwdLogin
@@ -65,6 +67,9 @@ function login() {
   if (indexFind !== -1) {
     let content = "Login successfully";
     modelMsg(content);
+    if (rememberMe) {
+      localStorage.setItem("rememberMe",rememberMe);
+    }
     // Start page switching gradient effect
     var opacity = 1;
     var interval = setInterval(function () {

@@ -57,7 +57,7 @@ html {
   /* 阻止视频元素接收鼠标事件 */
 }
 
-.hero-video video {
+.hero-video img {
   position: fixed;
   top: 0;
   left: 0;
@@ -65,8 +65,13 @@ html {
   height: 100%;
   object-fit: cover;
 }
+.modal-content {
+  background-color: rgba(55, 59, 89, 0.5) !important;
+}
 
-
+.modal-title {
+  color: #fff;
+}
 .mypic {
   border-radius: 150%;
   height: 180px;
@@ -274,9 +279,9 @@ html {
   width: 400px;
 }
 
-.modal-body {
+/* .modal-body {
   display: flex;
-}
+} */
 
 .flex-box {
   margin: 0 auto;
