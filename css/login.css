@@ -24,6 +24,29 @@ p {
   margin: 1.2rem 0;
   letter-spacing: 0.1rem;
 }
+.mt-5{
+  margin-top: 2rem !important;
+}
+.custom-button {
+  background-color: transparent;
+  /* 透明背景 */
+  border: 2px solid white;
+  /* 白色边框 */
+  color: white;
+  /* 白色字体 */
+  padding: 10px 20px;
+  /* 按钮内边距 */
+  font-size: 16px;
+  /* 字体大小 */
+  cursor: pointer;
+  /* 鼠标悬停样式 */
+}
+
+.custom-button:hover {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
 .hero-video video {
   position: fixed;
   top: 0;

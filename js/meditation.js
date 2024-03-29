@@ -234,3 +234,16 @@ function fadeAndRedirect2() {
     }
   }, 60); // 每50毫秒执行一次
 }
+function loginOut() {
+  localStorage.removeItem('rememberMe');
+  var opacity = 1;
+  var interval = setInterval(function () {
+    opacity -= 0.05; 
+    document.body.style.opacity = opacity;
+    document.body.style.backgroundColor = "rgba(300, 0 , 0, " + opacity + ")";
+    if (opacity <= 0) {
+      clearInterval(interval); 
+      window.location.href = "./login.html";
+    }
+  }, 60);
+}

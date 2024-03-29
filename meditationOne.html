@@ -109,7 +109,7 @@
                 id="playStopImg" />
             </div>
             <div class="font-style">
-              <span id="playStopText">Start</span>
+              <span id="playStopText">Continue</span>
             </div>
           </div>
           <div
@@ -146,8 +146,8 @@
         <div class="footer">
             <p>Online Meditation Environment & 2024</p>
         </div>-->
-      <div class="center-box">
-        <p>Keep calm and prepare to enjoy your meditation</p>
+      <div class="center-box" style="opacity: 0;">
+        <p>Keep calm and just breathe</p>
       </div>
 
       <div
@@ -162,7 +162,7 @@
           role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">set time</h5>
+              <h5 class="modal-title">Set Time</h5>
               <button
                 type="button"
                 class="close"
@@ -172,9 +172,15 @@
               </button>
             </div>
             <div class="modal-body flex-box">
+              <div style="color: #fff;">
+                <span>Keep calm and prepare to enjoy your meditation</span>
+            </div>
+            <div style="color: #fff;">
+              <span>You can edit your meditation on top left</span>
+          </div>
               <div
                 class="flex-center"
-                style="display: flex">
+                style="display: flex;margin-top: 20px;">
                 <div style="margin-top: 6px">
                   <span>set time：</span>
                 </div>
@@ -193,19 +199,19 @@
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
-              <button
+            <div class="modal-footer" style="justify-content: center;">
+              <!-- <button
                 type="button"
                 class="color-btn btn btn-secondary"
                 data-dismiss="modal">
                 Cancel
-              </button>
+              </button> -->
               <button
                 type="button"
                 class="color-btn btn btn-secondary"
                 id="confirmButton"
                 onclick="setTime()">
-                Confirm
+                Start meditation
               </button>
             </div>
           </div>
@@ -262,16 +268,22 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body" style="padding: 20px;">
                         <div style="color: #fff;">
-                            <span>Are you sure to stop your meditation？</span>
+                            <span>Are you sure to stop your meditation？<br>You can write down your feelings here.</span>
                         </div>
-                        <div style="color: #fff;">
-                            <span>You can write down your feelings here.</span>
+                        <div style="color: #fff; text-align: left;margin-top: 20px;">
+                            <span>Feelings before meditation?</span>
                         </div>
-                        <div style="padding: 20px;">
+                        <div style="padding: 20px 0;">
                             <input class="form-control" placeholder="Please enter your thoughts">
                         </div>
+                        <div style="color: #fff;text-align: left;">
+                          <span>Feelings after meditation?</span>
+                      </div>
+                      <div style="padding: 20px 0;">
+                        <input class="form-control" placeholder="Please enter your thoughts">
+                    </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="color-btn btn btn-secondary" data-dismiss="modal">Cancel</button>

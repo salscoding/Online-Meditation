@@ -19,7 +19,8 @@
     <link href="https://fonts.googleapis.com/css?family=Notable|Permanent+Marker|Roboto|Saira+Stencil+One&display=swap"
         rel="stylesheet">
 </head>
-
+<style>
+</style>
 <body>
     <!--Hero Image-->
 
@@ -29,26 +30,30 @@
                 <!-- <video autoplay="autoplay" loop="loop" muted defaultMuted playsinline id="myVideo" controls>
                     <source src="./assets/video/开始冥想.mp4" type="video/mp4">
                     </video> -->
-          <img src="./assets/image/meditation.jpg" alt="">
+          <img src="./assets/image/meditation.jpg" alt=""/>
 
             </div>
+            <div class="title">
+              <span>Online Meditation Environment</span>
+          </div>
+          <div class="centre-content">
+            <span>You can choose the point to start your meditation</span>
+        </div>
             <div class="setting-time">
-                <div class="img-font-box" style="position: relative;">
+            
+                <div class="img-font-box" style="position: relative;margin-top: 30px;">
                     <div>
-                        <div>
+                        <!-- <div>
                             <img src="./assets/image/home.png" alt="" class="titme-hover" data-toggle="modal"
                                 data-target="#confirmModalReturn">
-                        </div>
-                        <div class="font-style">
-                            <span>Return Home</span>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
-                <div id="container-countdown">
+                <!-- <div id="container-countdown">
                     <div id="count" class="is-hied">
                         <p id="countdown"></p>
                     </div>
-                </div>
+                </div> -->
                 <!-- <div class="img-font-box">
                     <div>
                         <img src="./assets/image/sttingTime.png" alt="" class="titme-hover" data-toggle="modal"
@@ -82,7 +87,7 @@
                         <span>Reset</span>
                     </div>
                 </div> -->
-                <div class="img-font-box" id="Mute">
+                <div class="img-font-box" id="Mute" style="opacity: 1;">
                     <div>
                         <img src="./assets/image/closeAudio.png" alt="" class="start-img" id="myImage">
                     </div>
@@ -95,26 +100,426 @@
                 <button onclick="fadeAndRedirect();" class="btn  mt-5 custom-button"
                     style="position: relative;z-index: 999;" id="btn01">O</button>
             </div>
-            <div class="custom-button1" style="top: 65%; left: 40%;">
+            <div class="custom-button1" style="top: 68%; left: 34%;">
                 <button onclick="fadeAndRedirect1();" class="btn mt-5 custom-button"
                     style="position: relative;" id="btn02">O</button>
             </div>
-            <div class="custom-button2" style="top: 15%; left: 50%;">
+            <div class="custom-button2" style="top: 22%; left: 46%;">
                 <button onclick="fadeAndRedirect2();" class="btn  mt-5 custom-button"
                     style="position: relative;" id="btn03">O</button>
             </div>
-            <div class="custom-button-bottom" style="top: 84%; left: 6%;">
+            <!-- <div class="custom-button-bottom" style="top: 84%; left: 6%;">
                 <button type="button" class="btn  mt-5 custom-button" data-toggle="tooltip"
                     data-placement="top" title="Don't feel alone, I'll accompany you." id="btn04">
                     O
                 </button>
-            </div>
+            </div> -->
         </div>
         <br>
+        <div class="order-box">
+            <div>
+              <button
+                class="order-btn btn mt-5"
+                type="button"
+                class="btn btn-primary"
+                data-toggle="modal"
+                data-target="#exampleModalCenter">
+                User Account
+              </button>
+            </div>
+            <div>
+              <button
+                class="order-btn btn mt-5"
+                type="button"
+                class="btn btn-primary"
+                data-toggle="modal"
+                data-target="#examplehistoryRecord">
+                Logs
+              </button>
+            </div>
+            <div>
+              <button
+                class="order-btn btn mt-5"
+                type="button"
+                data-toggle="modal"
+                data-target="#confirmModal">
+                Log Out
+              </button>
+            </div>
+          </div>
+          <div
+            class="modal fade"
+            id="exampleModalCenter"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div
+              class="modal-dialog modal-dialog-centered"
+              style="max-width: 800px"
+              role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5
+                    class="modal-title"
+                    id="exampleModalCenterTitle">
+                    User Center
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="flex-box">
+                    <form>
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword"
+                          class="col-sm-2 col-form-label"
+                          style="color: #fff"
+                          >Username</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            class="form-control"
+                            id="name"
+                            placeholder="Username" />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword"
+                          class="col-sm-2 col-form-label"
+                          style="color: #fff"
+                          >First name</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            class="form-control"
+                            id="Family name"
+                            placeholder="First name" />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword"
+                          class="col-sm-2 col-form-label"
+                          style="color: #fff"
+                          >Family name</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            class="form-control"
+                            id="Family name"
+                            placeholder="Family name" />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword"
+                          class="col-sm-2 col-form-label"
+                          style="color: #fff"
+                          >Birthday</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            class="form-control"
+                            id="Birthday"
+                            placeholder="Birthday" />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword"
+                          class="col-sm-2 col-form-label"
+                          style="color: #fff"
+                          >Email</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            class="form-control"
+                            id="Email"
+                            placeholder="Email" />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword"
+                          class="col-sm-2 col-form-label"
+                          style="color: #fff"
+                          >Password</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            class="form-control"
+                            id="Password"
+                            placeholder="Password" />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label
+                          for="inputPassword"
+                          class="col-sm-2 col-form-label"
+                          style="color: #fff"
+                          >ConfirmPwd</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            class="form-control"
+                            id="Etc"
+                            placeholder="ConfirmPwd" />
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="color-btn btn btn-secondary"
+                    data-dismiss="modal">
+                    Close
+                  </button>
+                  <button
+                    type="button"
+                    class="color-btn btn btn-secondary">
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="modal fade"
+            id="examplehistoryRecord"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div
+              class="modal-dialog modal-dialog-centered"
+              style="max-width: 800px"
+              role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5
+                    class="modal-title"
+                    id="exampleModalCenterTitle">
+                    Logs
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div
+                  class="modal-body"
+                  id="testTable">
+                  <table class="table table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Login time</th>
+                        <th scope="col">Meditation time</th>
+                        <th scope="col">Feelings before</th>
+                        <th scope="col">Feelings after</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>the Bird</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>Larry</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="color-btn btn btn-secondary"
+                    data-dismiss="modal">
+                    Close
+                  </button>
+                  <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="modal fade"
+            id="confirmModal"
+            tabindex="-1"
+            role="dialog">
+            <div
+              class="modal-dialog"
+              role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Log out or not</h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body flex-box">
+                  <div class="flex-center">
+                    <span>Are you sure to log out?</span>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="color-btn btn btn-secondary"
+                    data-dismiss="modal">
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    class="color-btn btn btn-secondary"
+                    id="confirmButton"
+                    onclick="loginOut()">
+                    Log out
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
-
-        <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        <!-- <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -146,8 +551,8 @@
                     </div> 
                 </div>
             </div>
-        </div>
-        <div
+        </div> -->
+        <!-- <div
         class="modal fade"
         id="confirmModalReturn"
         tabindex="-1"
@@ -188,7 +593,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
         <!-- <div class="modal fade" id="confirmModalReturn" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">

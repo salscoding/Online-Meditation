@@ -1,3 +1,7 @@
+window.onload = function() {
+  // 通过id选择弹窗，并调用Bootstrap的Modal方法显示它
+  $('#confirmModal').modal('show');
+};
 document.addEventListener("DOMContentLoaded", function () {
   var opacity = 0;
   var interval = setInterval(function () {
@@ -88,6 +92,7 @@ const buttonPlayStopText = document.querySelector("#playStopText");
 // 添加点击事件处理程序
 buttonPlayStop.addEventListener("click", function () {
   let isPlaying = buttonPlayStopText.textContent == "Pause";
+  console.log(timer);
   if (!timer) {
     let content = "Please set a meditation time";
     modelMsg(content);
@@ -97,25 +102,20 @@ buttonPlayStop.addEventListener("click", function () {
   // 切换播放状态和按钮图标
   if (!isPlaying) {
     timerID = setInterval(timerS, 1000);
+    var images = document.getElementById("myImage");
+    if (images.src.match("./assets/image/closeAudio.png")) {
+      images.src = "./assets/image/openAudio.png";
+    }
     audio.play();
     buttonPlayStopImg.src = "./assets/image/pause.png";
     buttonPlayStopText.textContent = "Pause";
-    document.getElementById("count").classList.add("is-hied");
-    // 移除文本动画效果并移除文本元素
-    let centerBox = document.querySelector(".center-box");
-    if (centerBox) {
-      // 使用渐变效果移除文本元素
-      centerBox.style.transition = "opacity 1s ease"; // 使用0.5秒的渐变
-      centerBox.style.opacity = "0"; // 将透明度设置为0，实现渐变效果
-      setTimeout(() => {
-        centerBox.remove(); // 在渐变完成后移除元素
-      }, 500); // setTimeout等待0.5秒后执行移除操作
-    }
+    // document.getElementById("count").classList.add("is-hied");
+    
   } else {
     stopTimer();
     console.log(111);
     buttonPlayStopImg.src = "./assets/image/start1.png";
-    buttonPlayStopText.textContent = "Start";
+    buttonPlayStopText.textContent = "continue";
   }
 });
 
@@ -125,10 +125,18 @@ var image = document.getElementById("myImage");
 Mute.addEventListener("click", function () {
   if (image.src.match("./assets/image/closeAudio.png")) {
     image.src = "./assets/image/openAudio.png";
-    audio.play();
+    if (buttonPlayStopText.textContent == "Pause") {
+      audio.play();
+    } else {
+      return
+    }
   } else {
     image.src = "./assets/image/closeAudio.png";
-    audio.pause();
+    if (buttonPlayStopText.textContent == "Pause") {
+      audio.pause();
+    } else {
+      return
+    }
   }
 });
 // 重置
@@ -160,11 +168,13 @@ function timerS() {
 
   if (amountTime < 0 && timerID) {
     // 仅在 amountTime 小于 0 且定时器处于活动状态时才调用 stopTimer()
-
+    buttonPlayStopImg.src = "./assets/image/start1.png";
+    buttonPlayStopText.textContent = "continue";
     amountTime = 0;
     let content = "It's time for your meditation";
     modelMsg(content);
     stopTimer();
+
     return false;
   }
 }
@@ -195,10 +205,33 @@ function setTime() {
   countdown.textContent = `${minutes} : ${seconds}`;
   stopTimer();
   let content = `Set the meditation time to  ${timer}min`;
-  modelMsg(content);
+  // modelMsg(content);
   $("#confirmModal").modal("hide");
-  $(".is-hied").removeClass("is-hied");
+  // 获取按钮元素
+  let buttonPlayStop1 = document.getElementById("playStop");
+  // 获取 center-box 元素
+  let centerBox = document.querySelector(".center-box");
+  
+  // 首先设置透明度为 0，并应用渐变效果
+  centerBox.style.opacity = "0";
+  centerBox.style.transition = "opacity 1s ease";
+
+  // 执行点击事件
+  buttonPlayStop1.click();
+
+  // 使用 setTimeout 来控制出现和消失的渐变效果
+  setTimeout(() => {
+    // 将透明度设置为 1，以显示元素
+    centerBox.style.opacity = "1";
+    
+    // 再次使用 setTimeout 来控制消失的渐变效果
+    setTimeout(() => {
+      // 将透明度设置为 0，以隐藏元素
+      centerBox.style.opacity = "0";
+    }, 5000); // 在5秒后执行隐藏的渐变效果
+  }, 0); // 在下一个事件循环中执行显示的渐变效果
 }
+
 function changeImage() {
   var audio = document.getElementById("myAudio");
   var image = document.getElementById("myImage");

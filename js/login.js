@@ -12,13 +12,9 @@ function signUp() {
   document.getElementById("isShowLogin").style.display = "none";
   document.getElementById("isAccount").style.display = "flex";
 }
-signUpButton.addEventListener("click", () =>
-  container.classList.add("right-panel-active")
-);
+signUpButton.addEventListener("click", () => container.classList.add("right-panel-active"));
 // When the user clicks the "Register" button, the panel displays an animation of the "right-panel-active" class.
-signInButton.addEventListener("click", () =>
-  container.classList.remove("right-panel-active")
-);
+signInButton.addEventListener("click", () => container.classList.remove("right-panel-active"));
 // When the user clicks the "Login" button, the panel hides and removes the "right-panel-active" class.
 function register() {
   var emailInput = document.getElementById("emial").value;
@@ -59,16 +55,14 @@ function login() {
   var userLogin = document.getElementById("userLogin").value;
   var pwdLogin = document.getElementById("pwdLogin").value;
   let rememberMe = document.getElementById("rememberMe").checked;
-  console.log(rememberMe)
+  console.log(rememberMe);
   let hotUser = JSON.parse(localStorage.getItem("hotUser"));
-  const indexFind = hotUser.findIndex(
-    (item) => item.name == userLogin && item.pwd == pwdLogin
-  );
+  const indexFind = hotUser.findIndex((item) => item.name == userLogin && item.pwd == pwdLogin);
   if (indexFind !== -1) {
     let content = "Login successfully";
     modelMsg(content);
     if (rememberMe) {
-      localStorage.setItem("rememberMe",rememberMe);
+      localStorage.setItem("rememberMe", rememberMe);
     }
     // Start page switching gradient effect
     var opacity = 1;
@@ -81,7 +75,7 @@ function login() {
         // Manually triggered form submission
         document.querySelector("#isShowLogin form").submit();
       }
-    }, 60); 
+    }, 60);
     return false; // Blocking default form submission behaviour
   } else {
     let content = "The username or password is incorrect. Please re-enter them.";
@@ -104,20 +98,20 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.style.opacity = opacity;
     document.body.style.backgroundColor = "rgba(0, 191, 255, " + opacity + ")";
     if (opacity >= 1) {
-      clearInterval(interval); 
+      clearInterval(interval);
     }
-  }, 60); 
+  }, 60);
 });
 
 function returnHome() {
   var opacity = 1;
   var interval = setInterval(function () {
-    opacity -= 0.05; 
+    opacity -= 0.05;
     document.body.style.opacity = opacity;
     document.body.style.backgroundColor = "rgba(0, 191, 255, " + opacity + ")";
     if (opacity <= 0) {
-      clearInterval(interval); 
+      clearInterval(interval);
       window.location.href = "./index.html";
     }
-  }, 60); 
+  }, 60);
 }
