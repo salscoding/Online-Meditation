@@ -1,6 +1,6 @@
-window.onload = function() {
+window.onload = function () {
   // 通过id选择弹窗，并调用Bootstrap的Modal方法显示它
-  $('#confirmModal').modal('show');
+  $("#confirmModal").modal("show");
 };
 document.addEventListener("DOMContentLoaded", function () {
   var opacity = 0;
@@ -110,10 +110,8 @@ buttonPlayStop.addEventListener("click", function () {
     buttonPlayStopImg.src = "./assets/image/pause.png";
     buttonPlayStopText.textContent = "Pause";
     // document.getElementById("count").classList.add("is-hied");
-    
   } else {
     stopTimer();
-    console.log(111);
     buttonPlayStopImg.src = "./assets/image/start1.png";
     buttonPlayStopText.textContent = "continue";
   }
@@ -128,14 +126,14 @@ Mute.addEventListener("click", function () {
     if (buttonPlayStopText.textContent == "Pause") {
       audio.play();
     } else {
-      return
+      return;
     }
   } else {
     image.src = "./assets/image/closeAudio.png";
     if (buttonPlayStopText.textContent == "Pause") {
       audio.pause();
     } else {
-      return
+      return;
     }
   }
 });
@@ -171,8 +169,9 @@ function timerS() {
     buttonPlayStopImg.src = "./assets/image/start1.png";
     buttonPlayStopText.textContent = "continue";
     amountTime = 0;
-    let content = "It's time for your meditation";
-    modelMsg(content);
+    let content1 = `You have completed your ${timer} min meditation today.`;
+    let content2 = "Would you like to continue?";
+    modelMsg1(content1, content2);
     stopTimer();
 
     return false;
@@ -204,30 +203,55 @@ function setTime() {
   }
   countdown.textContent = `${minutes} : ${seconds}`;
   stopTimer();
-  let content = `Set the meditation time to  ${timer}min`;
-  // modelMsg(content);
   $("#confirmModal").modal("hide");
   // 获取按钮元素
   let buttonPlayStop1 = document.getElementById("playStop");
   // 获取 center-box 元素
   let centerBox = document.querySelector(".center-box");
-  
+  let imgFontBoxes = document.querySelectorAll(".img-font-box");
+  let isHied = document.querySelector(".is-hied");
   // 首先设置透明度为 0，并应用渐变效果
   centerBox.style.opacity = "0";
   centerBox.style.transition = "opacity 1s ease";
-
   // 执行点击事件
   buttonPlayStop1.click();
-
   // 使用 setTimeout 来控制出现和消失的渐变效果
   setTimeout(() => {
+    isHied.style.opacity = "1";
+    // 遍历所有选定的元素，并将它们的透明度设置为 0
+    imgFontBoxes.forEach((box) => {
+      box.style.opacity = "1";
+    });
     // 将透明度设置为 1，以显示元素
     centerBox.style.opacity = "1";
-    
     // 再次使用 setTimeout 来控制消失的渐变效果
     setTimeout(() => {
+      // 遍历所有选定的元素，并将它们的透明度设置为 0
+      imgFontBoxes.forEach((box) => {
+        box.style.opacity = "0";
+
+        // 鼠标悬停时显示
+        box.addEventListener("mouseover", function () {
+          this.style.opacity = "1";
+        });
+
+        // 鼠标移出时恢复默认透明度
+        box.addEventListener("mouseout", function () {
+          this.style.opacity = "0";
+        });
+      });
       // 将透明度设置为 0，以隐藏元素
       centerBox.style.opacity = "0";
+      isHied.style.opacity = "0";
+      // 鼠标悬停时显示
+      isHied.addEventListener("mouseover", function () {
+        this.style.opacity = "1";
+      });
+
+      // 鼠标移出时恢复默认透明度
+      isHied.addEventListener("mouseout", function () {
+        this.style.opacity = "0";
+      });
     }, 5000); // 在5秒后执行隐藏的渐变效果
   }, 0); // 在下一个事件循环中执行显示的渐变效果
 }
@@ -280,4 +304,22 @@ function modelMsg(content) {
   $("#alertMsg").modal("show");
   let text = document.getElementById("alertMsgVal");
   text.textContent = content;
+}
+function modelMsg1(content1, content2) {
+  $("#alertMsg1").modal("show");
+  let text1 = document.getElementById("alertMsgVal1");
+  text1.textContent = content1;
+  let text2 = document.getElementById("alertMsgVal2");
+  text2.textContent = content2;
+}
+function openNextModal(choice) {
+  // 关闭当前模态框
+  $("#alertMsg1").modal("hide");
+
+  // 根据用户的选择打开相应的新模态框
+  if (choice === "Yes") {
+    $("#confirmModal").modal("show");
+  } else {
+    $("#confirmModalReturn").modal("show");
+  }
 }

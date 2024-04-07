@@ -389,7 +389,7 @@ html {
 
 .img-font-box {
   margin-top: 5px;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 1s;
 }
 

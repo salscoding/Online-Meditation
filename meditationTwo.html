@@ -183,21 +183,47 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body" style="padding: 20px;">
+                    <div class="modal-body" style="padding: 20px;font-size: 18px;">
                         <div style="color: #fff;">
-                            <span>Are you sure to stop your meditation？</span>
+                            <span>Are you sure to stop your meditation？<br>You can write down your feelings here.</span>
                         </div>
                         <div style="color: #fff; text-align: left;margin-top: 20px;">
-                            <span>You can write down your feelings here.</span>
+                            <span>How stressed are you before meditation?</span>
                         </div>
-                        <div style="padding: 20px 0;">
-                            <input class="form-control" placeholder="Please enter your thoughts">
-                        </div>
-                        <div style="color: #fff;text-align: left;">
-                          <span>Are you sure to stop your meditation？</span>
+                        <div class="checkout" style="padding: 20px 0;color: #fff;text-align: left;font-size: 18px;">
+                          <label  style="margin-right: 10px;">
+                              <input style="width: 15px;height: 15px;" type="radio" name="stressLevel1" value="0" class="stress-radio">
+                              0: No stress
+                          </label>
+                          <label  style="margin-right: 10px;">
+                              <input style="width: 15px;height: 15px;" type="radio" name="stressLevel1" value="1" class="stress-radio">
+                              1: Little stress
+                          </label>
+                          <label  style="margin-right: 10px;">
+                              <input  style="width: 15px;height: 15px;" type="radio" name="stressLevel1" value="2" class="stress-radio">
+                              2: Much stress
+                          </label>
                       </div>
-                      <div style="padding: 20px 0;">
-                        <input class="form-control" placeholder="Please enter your thoughts">
+                      
+                        <div style="color: #fff;text-align: left;">
+                          <span>How stressed are you after meditation?</span>
+                      </div>
+                      <div class="checkout" style="padding: 20px 0;color: #fff;text-align: left;font-size: 18px;">
+                        <label  style="margin-right: 10px;">
+                            <input style="width: 15px;height: 15px;" type="radio" name="stressLevel2" value="0" class="stress-radio">
+                            0: No stress
+                        </label>
+                        <label  style="margin-right: 10px;">
+                            <input style="width: 15px;height: 15px;" type="radio" name="stressLevel2" value="1" class="stress-radio">
+                            1: Little stress
+                        </label>
+                        <label  style="margin-right: 10px;">
+                            <input style="width: 15px;height: 15px;" type="radio" name="stressLevel2" value="2" class="stress-radio">
+                            2: Much stress
+                        </label>
+                    </div>
+                    <div style="color: #fff; text-align: center;">
+                        <span>Thank you for your meditation, see you next time!</span>
                     </div>
                     </div>
                     <div class="modal-footer">
@@ -228,6 +254,47 @@
                 </div>
             </div>
         </div>
+        <div
+      class="modal fade"
+      id="alertMsg1"
+      tabindex="-1"
+      role="dialog">
+      <div
+        class="modal-dialog"
+        role="document">
+        <div class="modal-content">
+          <div class="modal-header alertMsg-head">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div style="color: #fff">
+              <span id="alertMsgVal1">Whether to return to the home page</span>
+              <br>
+              <span id="alertMsgVal2">Whether to return to the home page</span>
+            </div>
+          </div>
+          <div class="modal-footer alertMsg-footer">
+            <button style="margin: 5px 50px;"
+              type="button"
+              class="color-btn btn btn-secondary"
+              onclick="openNextModal('Yes')">
+              Yes
+            </button>
+            <button style="margin: 5px 50px;"
+              type="button"
+              class="color-btn btn btn-secondary"
+              onclick="openNextModal('No')">
+              No
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
         <div>
             <audio id="myAudio" loop>
                 <source src="./assets/video/lake.mp3" />

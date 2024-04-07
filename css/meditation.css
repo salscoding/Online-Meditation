@@ -516,10 +516,10 @@ html {
   margin-right: 10px;
 }
 .order-btn {
-  display:flex;
+  display: flex;
   justify-content: center;
-    align-items: center;
-  background-color:rgba(55, 59, 89, 0.5);
+  align-items: center;
+  background-color: rgba(55, 59, 89, 0.5);
   border: 2px solid white;
   color: white;
   font-size: 20px;
@@ -601,6 +601,18 @@ html {
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
-  height:auto!important;
+  height: auto !important;
 }
-
+.checkout {
+  padding: 20px 0;
+  color: #fff;
+  text-align: left;
+  font-size: 18px;
+}
+.label{
+  margin-right: 10px !important;
+}
+input[type=radio]{
+  width: 15px !important;
+    height: 15px !important;
+}
