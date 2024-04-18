@@ -4,6 +4,7 @@ use App\Http\Controllers\ApplicationSettingsController;
 use App\Http\Controllers\Backend\PermissionController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Frontend\AuthController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -45,45 +46,62 @@ Route::get('/clear', function () {
     return redirect()->route('dashboard')->with($notification);
 })->name('clear');
 
-Route::get('/', function () {
-    return view('auth.login');
+
+// backend routes with auth middleware and admin prefix
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    // Route::get('/', function () {
+    //     return view('auth.login');
+    // });
+
+    Route::get('/user/logout', function () {
+        Auth::logout();
+        return redirect()->route('login');
+    })->name('logout');
+
+    // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    //     return view('dashboard');
+    // })->name('dashboard');
+
+
+    // Application Settings Routes
+    Route::resources([
+        'app-settings' => ApplicationSettingsController::class,
+    ]);
+    // Application Settings Routes End
+
+    // User Routes
+    Route::post('users/save-layout', [UserController::class, 'saveThemeData'])->name('users.themeData');
+
+    Route::resources([
+        'users' => UserController::class,
+    ]);
+    // User Routes End
+
+    // Permissions Routes
+    Route::get('/permissions/getalldata', [PermissionController::class, 'getAllData'])->name('permissions.getAllData');
+
+    Route::resources([
+        'permissions' => PermissionController::class,
+    ]);
+    // Permissions Routes End
+
+    // Roles Routes
+
+    Route::resources([
+        'roles' => RoleController::class,
+    ]);
+    // Roles Routes End
 });
 
-Route::get('/user/logout', function () {
-    Auth::logout();
-    return redirect()->route('login');
-})->name('admin.logout');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
-
-
-// Application Settings Routes
-Route::resources([
-    'app-settings' => ApplicationSettingsController::class,
-]);
-// Application Settings Routes End
-
-// User Routes
-Route::post('users/save-layout', [UserController::class, 'saveThemeData'])->name('users.themeData');
-
-Route::resources([
-    'users' => UserController::class,
-]);
-// User Routes End
-
-// Permissions Routes
-Route::get('/permissions/getalldata', [PermissionController::class, 'getAllData'])->name('permissions.getAllData');
-
-Route::resources([
-    'permissions' => PermissionController::class,
-]);
-// Permissions Routes End
-
-// Roles Routes
-
-Route::resources([
-    'roles' => RoleController::class,
-]);
-// Roles Routes End
+Route::get('/', [AuthController::class, 'login'])->name('home.login');
+// group routes for frontend with auth middleware
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/home', function () {
+        return view('frontend.meditation');
+    })->name('home');
+});
