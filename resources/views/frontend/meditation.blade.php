@@ -62,7 +62,7 @@
                             data-target="#confirmModal">
                     </div>
                     <div class="font-style">
-                        <span>Set time</span>
+                        <span>Set Time</span>
                     </div>
                 </div>
                 <div class="img-font-box" id="play">

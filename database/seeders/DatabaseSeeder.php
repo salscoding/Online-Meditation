@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Super Admin',
             'email' => 'sarahman23@student.oulu.fi',
             'password' => Hash::make('12345678'),
-            'image' => $faker->image('public/uploads/user_avatar', 50, 50, null, false, true),
+            // 'image' => $faker->image('public/uploads/user_avatar', 50, 50, null, false, true),
             'email_verified_at' => now(),
         ]);
 

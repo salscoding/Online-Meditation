@@ -51,7 +51,7 @@
                             class="titme-hover" data-toggle="modal" data-target="#confirmModal" />
                     </div>
                     <div class="font-style">
-                        <span>Set time</span>
+                        <span>Set Time</span>
                     </div>
                 </div>
                 <div class="img-font-box" id="playStop">
@@ -106,7 +106,7 @@
                         </div>
                         <div class="flex-center" style="display: flex;margin-top: 20px;">
                             <div style="margin-top: 6px">
-                                <span>set time：</span>
+                                <span>Set Time：</span>
                             </div>
                             <div class="input-group">
                                 <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)"
@@ -190,7 +190,7 @@
                         <button type="button" class="color-btn btn btn-secondary"
                             data-dismiss="modal">Cancel</button>
                         <button type="button" class="color-btn btn btn-secondary" id="confirmButton"
-                            onclick="returnHome()">confirm</button>
+                            onclick="returnHome()">Confirm</button>
                     </div>
                 </div>
             </div>
