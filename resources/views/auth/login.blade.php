@@ -108,7 +108,7 @@
                                     <button type="submit" class="btn btn-primary w-100" tabindex="4">Sign
                                         in</button>
                                 </form>
-                                <p class="text-center mt-2"><span>New on our platform?</span>
+                                {{-- <p class="text-center mt-2"><span>New on our platform?</span>
                                     <a href="{{ route('register') }}"><span>&nbsp;Create an account</span></a>
                                 </p>
                                 <div class="divider my-2">
@@ -119,7 +119,7 @@
                                         class="btn btn-twitter white" href="#"><i
                                             data-feather="twitter"></i></a><a class="btn btn-google"
                                         href="#"><i data-feather="mail"></i></a><a class="btn btn-github"
-                                        href="#"><i data-feather="github"></i></a></div>
+                                        href="#"><i data-feather="github"></i></a></div> --}}
                             </div>
                         </div>
                         <!-- /Login-->

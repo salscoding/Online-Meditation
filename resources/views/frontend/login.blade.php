@@ -31,43 +31,47 @@
             justify-content: center;
             align-items: center;
           ">
-                <button onclick="returnHome();" class="btn mt-5 custom-button" style="position: relative">
+                <a href="{{ route('frontend.main') }}" class="btn mt-5 custom-button" style="position: relative">
                     Return
-                </button>
+                </a>
             </div>
         </div>
         <div class="container" id="container">
             <!-- Register -->
             <div class="form-container sign-up-container">
-                <form action="./login.html" onsubmit="return register();">
+                <form action="{{ route('frontend.register') }}" method="post">
+                    @csrf
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-2 col-form-label"
-                            style="color: #fff; width: 120px">Username</label>
+                            style="color: #fff; width: 120px">Name</label>
                         <div class="col-sm-10">
-                            <input type="text" placeholder="username" id="username" required />
+                            <input class="form-control" type="text" placeholder="name" id="name" name="name"
+                                required />
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-2 col-form-label"
                             style="color: #fff; width: 120px">Email</label>
                         <div class="col-sm-10">
-                            <input type="text" placeholder="email" id="emial" required />
+                            <input class="form-control" name="email" type="text" placeholder="email" id="email"
+                                required />
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-2 col-form-label"
                             style="color: #fff; width: 120px">Password</label>
                         <div class="col-sm-10">
-                            <input type="password" placeholder="password" id="pwd" required />
+                            <input class="form-control" name="password" type="password" placeholder="password"
+                                id="password" required />
                         </div>
                     </div>
-                    <div class="form-group row">
+                    {{-- <div class="form-group row">
                         <label for="inputPassword" class="col-sm-2 col-form-label"
                             style="color: #fff; width: 120px">ConfirmPwd</label>
                         <div class="col-sm-10">
-                            <input type="password" placeholder="confirm password" id="pwds" required />
+                            <input type="password" placeholder="confirm password" id="password2" required />
                         </div>
-                    </div>
+                    </div> --}}
                     <button type="submit" class="color-op">
                         register
                     </button>
@@ -75,12 +79,15 @@
             </div>
             <!-- Login -->
             <div class="form-container sing-in-container" id="isShowLogin">
-                <form action="./meditation.html" onsubmit="return login();">
+                <form action="{{ route('frontend.authenticate') }}" method="post">
+                    @csrf
                     <h1 class="color-op">Login</h1>
-                    <input type="text" placeholder="username" id="userLogin" required />
-                    <input type="password" placeholder="password" id="pwdLogin" required />
+                    <input class="form-control" type="text" placeholder="email" id="usernameLogin" name="email"
+                        required />
+                    <input class="form-control" type="password" placeholder="password" id="passwordLogin"
+                        name="password" required />
                     <div class="remember">
-                        <input type="checkbox" id="rememberMe" />
+                        <input type="checkbox" id="rememberMe" name="remember" />
                         <label for="rememberMe">Remember me</label>
                     </div>
                     <button type="submit" class="color-op">

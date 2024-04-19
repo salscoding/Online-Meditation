@@ -397,10 +397,10 @@
                         <button type="button" class="color-btn btn btn-secondary" data-dismiss="modal">
                             Cancel
                         </button>
-                        <button type="button" class="color-btn btn btn-secondary" id="confirmButton"
-                            onclick="loginOut()">
+                        <a href="{{ route('frontend.logout') }}" type="button" class="color-btn btn btn-secondary"
+                            id="confirmButton">
                             Log out
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -533,7 +533,7 @@
     </div>
     <div>
         <audio id="myAudio" loop>
-            <source src="./assets/video/y1972.mp3" />
+            <source src="{{ asset('frontend/assets/video/y1972.mp3') }}" />
         </audio>
     </div>
     <!-- 音频1

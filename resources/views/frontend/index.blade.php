@@ -50,9 +50,9 @@
         <div class="center-box">
             <p>Online Meditation Environment</p>
         </div>
-        <button onclick="fadeAndRedirect();" class="btn custom-button" style="position: relative; z-index: 1000;">
+        <a href="{{ route('frontend.login') }}"class="btn custom-button" style="position: relative; z-index: 1000;">
             Register / Login
-        </button>
+        </a>
     </div>
     <div class="content" id="textContainer">
         <img src="{{ asset('frontend/assets/image/index_popup.jpg') }}" alt="">

@@ -48,7 +48,7 @@ Route::get('/clear', function () {
 
 
 // backend routes with auth middleware and admin prefix
-Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
+Route::group(['middleware' => ['auth', 'hasRole:allowed'], 'prefix' => 'admin'], function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
@@ -59,8 +59,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
 
     Route::get('/user/logout', function () {
         Auth::logout();
-        return redirect()->route('login');
-    })->name('logout');
+        return redirect()->route('frontend.login');
+    })->name('admin.logout');
 
     // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     //     return view('dashboard');
@@ -98,10 +98,36 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
 });
 
 
-Route::get('/', [AuthController::class, 'login'])->name('home.login');
+Route::get('/', function () {
+    if (Auth::check()) {
+        return redirect()->route('frontend.home');
+    } else {
+        return view('frontend.index');
+    }
+})->name('frontend.main');
+Route::get('/signin', [AuthController::class, 'login'])->name('frontend.login');
+
+Route::post('/authenticate', [AuthController::class, 'authenticate'])->name('frontend.authenticate');
+
+Route::post('/register', [AuthController::class, 'register'])->name('frontend.register');
+
 // group routes for frontend with auth middleware
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', function () {
         return view('frontend.meditation');
-    })->name('home');
+    })->name('frontend.home');
+
+    Route::get('/logout', [AuthController::class, 'logout'])->name('frontend.logout');
+
+    Route::get('/meditationOne', function () {
+        return view('frontend.meditationOne');
+    })->name('frontend.meditationOne');
+
+    Route::get('/meditationTwo', function () {
+        return view('frontend.meditationTwo');
+    })->name('frontend.meditationTwo');
+
+    Route::get('/meditationThree', function () {
+        return view('frontend.meditationThree');
+    })->name('frontend.meditationThree');
 });

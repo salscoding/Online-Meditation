@@ -52,7 +52,10 @@ class RolesAndPermissionsSeeder extends Seeder
         $role = Role::firstOrCreate(['guard_name' => 'web', 'name' => 'Super Admin']);
         $role->givePermissionTo(Permission::all());
 
-        // // User role with permissions
+        // Customer role
+        $role = Role::firstOrCreate(['guard_name' => 'web', 'name' => 'Customer']);
+
+        // User role with permissions
         // $role = Role::firstOrCreate(['guard_name' => 'web', 'name' => 'User']);
 
         // $rolePermissions = [
