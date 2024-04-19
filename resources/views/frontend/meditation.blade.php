@@ -39,7 +39,7 @@
                 <span>Online Meditation Environment</span>
             </div>
             <div class="centre-content">
-                <span>You can choose the point to start your meditation</span>
+                <span>Please choose a point to start your meditation (cloud, forest, or lake)</span>
             </div>
             <div class="setting-time">
 

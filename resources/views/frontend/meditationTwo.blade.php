@@ -115,17 +115,17 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">set time</h5>
+                        <h5 class="modal-title">Set Time</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body flex-box">
                         <div style="color: #fff;">
-                            <span>Keep calm and prepare to enjoy your meditation</span>
+                            <span>Please set a time for your meditation.</span>
                         </div>
                         <div style="color: #fff;">
-                            <span>You can edit your meditation on top left</span>
+                            <span>You can edit your meditation settings at the top left corner.</span>
                         </div>
                         <div class="flex-center" style="display: flex;margin-top: 20px;">
                             <div style="margin-top: 6px;">
@@ -184,51 +184,52 @@
                     </div>
                     <div class="modal-body" style="padding: 20px;font-size: 18px;">
                         <div style="color: #fff;">
-                            <span>Are you sure to stop your meditation？<br>You can write down your feelings here.</span>
+                            <span>Are you sure you want to end your meditation? <br>Please select your answers to the
+                                questions below.</span>
                         </div>
                         <div style="color: #fff; text-align: left;margin-top: 20px;">
-                            <span>How stressed are you before meditation?</span>
+                            <span>How stressed did you feel before your meditation?</span>
                         </div>
-                        <div class="checkout" style="padding: 20px 0;color: #fff;text-align: left;font-size: 18px;">
+                        <div class="checkout" style="padding: 20px 0;color: #fff;text-align: left;">
                             <label style="margin-right: 10px;">
                                 <input style="width: 15px;height: 15px;" type="radio" name="stressLevel1"
                                     value="0" class="stress-radio">
-                                0: No stress
+                                0: No Stress
                             </label>
                             <label style="margin-right: 10px;">
                                 <input style="width: 15px;height: 15px;" type="radio" name="stressLevel1"
                                     value="1" class="stress-radio">
-                                1: Little stress
+                                1: Some Stress
                             </label>
                             <label style="margin-right: 10px;">
                                 <input style="width: 15px;height: 15px;" type="radio" name="stressLevel1"
                                     value="2" class="stress-radio">
-                                2: Much stress
+                                2: A Lot of Stress
                             </label>
                         </div>
 
                         <div style="color: #fff;text-align: left;">
-                            <span>How stressed are you after meditation?</span>
+                            <span>How stressed are you feeling now?</span>
                         </div>
-                        <div class="checkout" style="padding: 20px 0;color: #fff;text-align: left;font-size: 18px;">
+                        <div class="checkout" style="padding: 20px 0;color: #fff;text-align: left;">
                             <label style="margin-right: 10px;">
                                 <input style="width: 15px;height: 15px;" type="radio" name="stressLevel2"
                                     value="0" class="stress-radio">
-                                0: No stress
+                                0: No Stress
                             </label>
                             <label style="margin-right: 10px;">
                                 <input style="width: 15px;height: 15px;" type="radio" name="stressLevel2"
                                     value="1" class="stress-radio">
-                                1: Little stress
+                                1: Some Stress
                             </label>
                             <label style="margin-right: 10px;">
                                 <input style="width: 15px;height: 15px;" type="radio" name="stressLevel2"
                                     value="2" class="stress-radio">
-                                2: Much stress
+                                2: A Lot of Stress
                             </label>
                         </div>
                         <div style="color: #fff; text-align: center;">
-                            <span>Thank you for your meditation, see you next time!</span>
+                            <span>Thank you for meditating today! Hope to see you again soon</span>
                         </div>
                     </div>
                     <div class="modal-footer">
