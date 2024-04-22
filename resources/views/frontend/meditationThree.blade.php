@@ -33,6 +33,17 @@
             </div>
             <div class="setting-time">
                 <div class="img-font-box" style="position: relative;">
+                    <a href="{{ route('frontend.home') }}" style="text-decoration: none;">
+                        <div>
+                            <div>
+                                <img src="{{ asset('frontend/assets/image/home1.png') }}" alt="" width="50px"
+                                    class="titme-hover" />
+                            </div>
+                            <div class="font-style">
+                                <span>Home</span>
+                            </div>
+                        </div>
+                    </a>
                     <div>
                         <div>
                             <img src="{{ asset('frontend/assets/image/return.png') }}" alt=""
@@ -146,7 +157,7 @@
                     <div class="modal-footer" style="justify-content: center;">
                         <!-- <button type="button" class="color-btn btn btn-secondary" data-dismiss="modal">Cancel</button> -->
                         <button type="button" class=" color-btn btn btn-secondary" id="confirmButton"
-                            onclick="setTime()">Start meditation</button>
+                            onclick="setTime()">Start Meditation</button>
                     </div>
                 </div>
             </div>

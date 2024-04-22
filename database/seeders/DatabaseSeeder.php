@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         // user_profiles table
         DB::table('user_profiles')->insert([
             'user_id' => 1,
-            'username' => 'superadmin',
+            'username' => 'sarahman23',
             'first_name' => 'Super',
             'last_name' => 'Admin',
             'birthdate' => $faker->date,

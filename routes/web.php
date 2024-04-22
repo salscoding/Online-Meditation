@@ -117,7 +117,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', [UserProfileController::class, 'index'])->name('frontend.home');
     Route::post('/user/{userId}/update', [UserProfileController::class, 'updateUser'])->name('users.update');
 
-
     Route::get('/logout', [AuthController::class, 'logout'])->name('frontend.logout');
 
     Route::get('/meditationOne', function () {

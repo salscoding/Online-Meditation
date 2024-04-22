@@ -8,13 +8,16 @@
                             data-feather="menu"></i></a></li>
             </ul>
             <ul class="nav navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="{{ route('frontend.home') }}"><i class="ficon"
+                            data-feather="home"></i></a></li>
                 <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon"
                             data-feather="sun"></i></a></li>
             </ul>
         </div>
         <ul class="nav navbar-nav align-items-center ms-auto">
             <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link"
-                    id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    id="dropdown-user" href="#" data-bs-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
                     @php
                         $user = Auth::user();
                         $role = $user->getRoleNames();
@@ -26,8 +29,8 @@
 
                     @if ($user->image != null)
                         <span class="avatar">
-                            <img class="round" src="{{ asset('uploads/user_avatar/' . $user->image) }}"
-                                alt="avatar" height="40" width="40">
+                            <img class="round" src="{{ asset('uploads/user_avatar/' . $user->image) }}" alt="avatar"
+                                height="40" width="40">
                         @else
                             <div class="avatar bg-light-danger">
                                 <span class="avatar-content">{{ substr($user->name, 0, 2) }}</span>

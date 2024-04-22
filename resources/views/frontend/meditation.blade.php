@@ -284,14 +284,6 @@
                                             placeholder="Password" required />
                                     </div>
                                 </div>
-                                {{-- <div class="form-group row">
-                                    <label for="confirm_password" class="col-sm-2 col-form-label"
-                                        style="color: #fff">Confirm Password</label>
-                                    <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="confirm_password"
-                                            name="confirm_password" placeholder="Confirm Password" />
-                                    </div>
-                                </div> --}}
                             </form>
                         </div>
                     </div>
