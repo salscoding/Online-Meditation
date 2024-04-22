@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
-            $table->timestamp('login_time');
-            $table->timestamp('meditation_time');
-            $table->string('feelings_before');
-            $table->string('feelings_after');
+            $table->timestamp('login_time')->nullable();
+            $table->timestamp('meditation_time')->nullable();
+            $table->string('feelings_before')->nullable();
+            $table->string('feelings_after')->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
