@@ -164,14 +164,14 @@
                                     <label for="inputPassword" class="col-sm-2 col-form-label"
                                         style="color: #fff">First Name</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" id="Family Name" placeholder="First name" />
+                                        <input class="form-control" id="First Name" placeholder="First Name" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="inputPassword" class="col-sm-2 col-form-label"
                                         style="color: #fff">Last Name</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" id="Last Name" placeholder="Family name" />
+                                        <input class="form-control" id="Last Name" placeholder="Last Name" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
