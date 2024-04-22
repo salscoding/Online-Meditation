@@ -155,21 +155,21 @@
                             <form>
                                 <div class="form-group row">
                                     <label for="inputPassword" class="col-sm-2 col-form-label"
-                                        style="color: #fff">Username</label>
+                                        style="color: #fff">User Name</label>
                                     <div class="col-sm-10">
                                         <input class="form-control" id="name" placeholder="Username" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="inputPassword" class="col-sm-2 col-form-label"
-                                        style="color: #fff">First name</label>
+                                        style="color: #fff">First Name</label>
                                     <div class="col-sm-10">
                                         <input class="form-control" id="Family name" placeholder="First name" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="inputPassword" class="col-sm-2 col-form-label"
-                                        style="color: #fff">Family name</label>
+                                        style="color: #fff">Family Name</label>
                                     <div class="col-sm-10">
                                         <input class="form-control" id="Family name" placeholder="Family name" />
                                     </div>
