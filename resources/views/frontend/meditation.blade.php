@@ -155,7 +155,7 @@
                             <form>
                                 <div class="form-group row">
                                     <label for="inputPassword" class="col-sm-2 col-form-label"
-                                        style="color: #fff">User Name</label>
+                                        style="color: #fff">Username</label>
                                     <div class="col-sm-10">
                                         <input class="form-control" id="name" placeholder="Username" />
                                     </div>
@@ -164,14 +164,14 @@
                                     <label for="inputPassword" class="col-sm-2 col-form-label"
                                         style="color: #fff">First Name</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" id="Family name" placeholder="First name" />
+                                        <input class="form-control" id="Family Name" placeholder="First name" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="inputPassword" class="col-sm-2 col-form-label"
-                                        style="color: #fff">Family Name</label>
+                                        style="color: #fff">Last Name</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" id="Family name" placeholder="Family name" />
+                                        <input class="form-control" id="Last Name" placeholder="Family name" />
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -199,7 +199,7 @@
                                     <label for="inputPassword" class="col-sm-2 col-form-label"
                                         style="color: #fff">ConfirmPwd</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" id="Etc" placeholder="ConfirmPwd" />
+                                        <input class="form-control" id="Etc" placeholder="Confirm Password" />
                                     </div>
                                 </div>
                             </form>
