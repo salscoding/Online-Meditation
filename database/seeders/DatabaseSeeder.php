@@ -25,6 +25,15 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
         ]);
 
+        // user_profiles table
+        DB::table('user_profiles')->insert([
+            'user_id' => 1,
+            'username' => 'superadmin',
+            'first_name' => 'Super',
+            'last_name' => 'Admin',
+            'birthdate' => $faker->date,
+        ]);
+
         // \App\Models\User::factory(10)->create();
 
         $this->call([

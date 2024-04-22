@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Jobs\ClearCacheJob;
 use App\Models\User;
+use App\Models\UserProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,7 @@ class AuthController extends Controller
         if (Auth::check()) {
             return redirect()->route('frontend.home');
         } else {
-            return view('frontend.login');
+            return view('auth.login');
         }
     }
 
@@ -54,6 +55,14 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+        ]);
+
+        $userid = $user->id;
+
+        $username = explode('@', $request->email)[0];
+        $username = UserProfile::firstOrCreate([
+            'user_id' => $userid,
+            'username' => $username,
         ]);
 
         $user->assignRole(2);

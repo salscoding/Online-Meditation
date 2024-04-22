@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\PermissionController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Frontend\AuthController;
+use App\Http\Controllers\Frontend\UserProfileController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -113,9 +114,9 @@ Route::post('/register', [AuthController::class, 'register'])->name('frontend.re
 
 // group routes for frontend with auth middleware
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/home', function () {
-        return view('frontend.meditation');
-    })->name('frontend.home');
+    Route::get('/home', [UserProfileController::class, 'index'])->name('frontend.home');
+    Route::post('/user/{userId}/update', [UserProfileController::class, 'updateUser'])->name('users.update');
+
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('frontend.logout');
 
