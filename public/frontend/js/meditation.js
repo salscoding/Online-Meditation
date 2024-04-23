@@ -156,44 +156,6 @@ function changeImage() {
     }
 }
 
-// 四个点的悬浮开启音频
-const audio1 = document.querySelector("#myAudio1");
-const audio2 = document.querySelector("#myAudio2");
-const audio3 = document.querySelector("#myAudio3");
-const audio4 = document.querySelector("#myAudio4");
-document.getElementById("btn01").addEventListener("mouseover", function () {
-    audio1.play();
-    audio2.pause();
-    audio3.pause();
-    audio4.pause();
-});
-
-document.getElementById("btn02").addEventListener("mouseover", function () {
-    audio2.play();
-    audio1.pause();
-    audio3.pause();
-    audio4.pause();
-});
-document.getElementById("btn03").addEventListener("mouseover", function () {
-    audio3.play();
-    audio2.pause();
-    audio1.pause();
-    audio4.pause();
-});
-document.getElementById("btn04").addEventListener("mouseover", function () {
-    audio4.play();
-    audio2.pause();
-    audio1.pause();
-    audio3.pause();
-});
-
-// 设置弹框内容
-function modelMsg(content) {
-    $("#alertMsg").modal("show");
-    let text = document.getElementById("alertMsgVal");
-    text.textContent = content;
-}
-
 function fadeAndRedirect() {
     var opacity = 1;
     var interval = setInterval(function () {

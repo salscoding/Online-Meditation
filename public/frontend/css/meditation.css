@@ -195,7 +195,7 @@ html {
 }
 
 .custom-button {
-    position: absolute;
+    position: fixed;
     /* 设置绝对定位 */
     background-color: transparent;
     /* 透明背景 */
@@ -258,7 +258,7 @@ html {
 }
 
 .custom-button1 {
-    position: absolute;
+    position: fixed;
     /* 设置绝对定位 */
     background-color: transparent;
     /* 透明背景 */
@@ -354,7 +354,7 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 20px;
     z-index: 9999;
@@ -445,7 +445,7 @@ html {
 }
 
 .custom-button2 {
-    position: absolute;
+    position: fixed;
     /* 设置绝对定位 */
     background-color: transparent;
     /* 透明背景 */
@@ -511,7 +511,7 @@ html {
     display: none !important;
 }
 .order-box {
-    position: absolute;
+    position: fixed;
     right: 0;
     display: flex;
 }

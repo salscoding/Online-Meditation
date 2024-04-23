@@ -59,7 +59,6 @@ function returnHome() {
 
     var csrfToken = $('meta[name="csrf-token"]').attr("content");
 
-    jQuery.noConflict();
     $.ajax({
         url: recordStressLevelsRoute,
         type: "POST",
@@ -242,7 +241,6 @@ function setTime() {
     stopTimer();
     $("#confirmModal").modal("hide");
 
-    jQuery.noConflict();
     $.ajax({
         url: startMeditationRoute,
         type: "GET",

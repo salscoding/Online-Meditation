@@ -241,7 +241,6 @@ function setTime() {
     stopTimer();
     $("#confirmModal").modal("hide");
 
-    jQuery.noConflict();
     $.ajax({
         url: startMeditationRoute,
         type: "GET",
