@@ -21,8 +21,8 @@
                     </div>
                     <div class="input-group">
                         <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)"
-                            id="timeValue" min="1" max="10"
-                            oninput="if(value> 10)value=10;if(value< 1)value=1" />
+                            id="timeValue" min="3" max="10"
+                            oninput="if(value> 10)value=10;if(value< 3)value=3" />
                         <div class="input-group-append">
                             <span class="input-group-text">min</span>
                         </div>
