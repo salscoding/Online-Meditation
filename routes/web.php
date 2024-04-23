@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\PermissionController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Frontend\AuthController;
+use App\Http\Controllers\Frontend\LogsController;
 use App\Http\Controllers\Frontend\UserProfileController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -122,6 +123,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/meditationOne', function () {
         return view('frontend.meditationOne');
     })->name('frontend.meditationOne');
+
+    Route::get('/start-meditation', [LogsController::class, 'startMeditation'])->name('startMeditation');
+    Route::post('/record-stress-levels', [LogsController::class, 'recordStressLevels'])->name('recordStressLevels');
+
 
     Route::get('/meditationTwo', function () {
         return view('frontend.meditationTwo');

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Online Meditation Environment</title>
 
     <!--Links-->
@@ -121,8 +122,8 @@
                             </div>
                             <div class="input-group">
                                 <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)"
-                                    id="timeValue" min="3" max="15"
-                                    oninput="if(value> 10)value=10;if(value< 1)value=1" />
+                                    id="timeValue" min="3" max="10"
+                                    oninput="if(value> 10)value=10;if(value< 3)value=3" />
                                 <div class="input-group-append">
                                     <span class="input-group-text">min</span>
                                 </div>
@@ -289,6 +290,7 @@
         </div>
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
 </script>
@@ -298,6 +300,12 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
 </script>
+
+<script>
+    var startMeditationRoute = "{{ route('startMeditation') }}";
+    var recordStressLevelsRoute = "{{ route('recordStressLevels') }}";
+</script>
+
 <script type="text/javascript" src="{{ asset('frontend/js/meditationOne.js') }}"></script>
 
 </html>

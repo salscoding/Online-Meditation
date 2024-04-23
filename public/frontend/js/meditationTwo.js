@@ -45,18 +45,52 @@ $(function () {
 });
 
 function returnHome() {
-    var opacity = 1;
-    var interval = setInterval(function () {
-        opacity -= 0.05; // 每次减小0.1
-        document.body.style.opacity = opacity;
-        document.body.style.backgroundColor =
-            "rgba(300, 0 , 0, " + opacity + ")";
-        if (opacity <= 0) {
-            clearInterval(interval); // 清除定时器
-            localStorage.setItem("amountTime", parseInt(amountTime));
-            window.location.href = "./home";
-        }
-    }, 60); // 每50毫秒执行一次
+    var stressLevelBefore = document.querySelector(
+        'input[name="stressLevel1"]:checked'
+    ).value;
+    var stressLevelAfter = document.querySelector(
+        'input[name="stressLevel2"]:checked'
+    ).value;
+
+    var data = {
+        stressLevelBefore: stressLevelBefore,
+        stressLevelAfter: stressLevelAfter,
+    };
+
+    var csrfToken = $('meta[name="csrf-token"]').attr("content");
+
+    jQuery.noConflict();
+    $.ajax({
+        url: recordStressLevelsRoute,
+        type: "POST",
+        contentType: "application/json",
+        headers: {
+            "X-CSRF-TOKEN": csrfToken,
+        },
+        data: JSON.stringify(data),
+        success: function (response) {
+            console.log(response);
+            fadeAndRedirectToHome();
+        },
+        error: function (xhr, status, error) {
+            console.error(xhr.responseText);
+        },
+    });
+
+    function fadeAndRedirectToHome() {
+        var opacity = 1;
+        var interval = setInterval(function () {
+            opacity -= 0.05;
+            document.body.style.opacity = opacity;
+            document.body.style.backgroundColor =
+                "rgba(300, 0 , 0, " + opacity + ")";
+            if (opacity <= 0) {
+                clearInterval(interval);
+                localStorage.setItem("amountTime", parseInt(amountTime));
+                window.location.href = "./home";
+            }
+        }, 60);
+    }
 }
 
 // 操作时间
@@ -207,6 +241,20 @@ function setTime() {
     countdown.textContent = `${minutes} : ${seconds}`;
     stopTimer();
     $("#confirmModal").modal("hide");
+
+    jQuery.noConflict();
+    $.ajax({
+        url: startMeditationRoute,
+        type: "GET",
+        data: {},
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (xhr, status, error) {
+            console.error(xhr.responseText);
+        },
+    });
+
     // 获取按钮元素
     let buttonPlayStop1 = document.getElementById("playStop");
     // 获取 center-box 元素

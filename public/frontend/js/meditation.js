@@ -35,7 +35,6 @@ let timerID;
 let amountTimer = parseInt(localStorage.getItem("amountTime"));
 var timer = localStorage.getItem("timer");
 var amountTime = null;
-debugger;
 if (param == "main") {
     amountTime = timer * 60;
 } else if (param == "meditation") {

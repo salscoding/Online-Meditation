@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Log;
 use App\Models\User;
 use App\Models\UserProfile;
 
@@ -13,7 +14,8 @@ class UserProfileController extends Controller
     {
         $authUser = auth()->user();
         $user = UserProfile::where('user_id', $authUser->id)->first();
-        return view('frontend.meditation', ['user' => $user]);
+        $logs = Log::where('user_id', $authUser->id)->orderBy('created_at', 'desc')->get();
+        return view('frontend.meditation', ['user' => $user, 'logs' => $logs]);
     }
 
     public function updateUser(Request $request, $userId)

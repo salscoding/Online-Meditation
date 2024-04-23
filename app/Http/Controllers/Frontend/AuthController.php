@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\ClearCacheJob;
+use App\Models\Log;
 use App\Models\User;
 use App\Models\UserProfile;
 use Illuminate\Http\Request;
@@ -35,6 +36,12 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
+
+            Log::create([
+                'user_id' => Auth::id(),
+                'login_time' => date('H:i:s'),
+            ]);
+
             return redirect()->route('frontend.home');
         }
 
@@ -70,6 +77,11 @@ class AuthController extends Controller
         ClearCacheJob::dispatch();
 
         Auth::login($user);
+
+        Log::create([
+            'user_id' => Auth::id(),
+            'login_time' => date('H:i:s'),
+        ]);
 
         return redirect()->route('frontend.main');
     }
